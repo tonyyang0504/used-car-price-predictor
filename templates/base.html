@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoValue</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/" {% if request.path == '/' %}class="active"{% endif %}>Home</a></li>
+                <li><a href="/value-your-car" {% if request.path == '/value-your-car' %}class="active"{% endif %}>Value Your Car</a></li>
+                <li><a href="/cars-for-sale" {% if request.path == '/cars-for-sale' %}class="active"{% endif %}>Cars for Sale</a></li>
+                <li><a href="/auction-cars" {% if request.path == '/auction-cars' %}class="active"{% endif %}>Auction Cars</a></li>
+                <li><a href="/undervalued-cars" {% if request.path == '/undervalued-cars' %}class="active"{% endif %}>Undervalued Cars</a></li>
+                <li><a href="/used-car-market-insights"{% if request.path == '/used-car-market-insights' %}class="active"{% endif %}>Used Car Market Insights</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="content">
+            © 2024 AutoValue. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

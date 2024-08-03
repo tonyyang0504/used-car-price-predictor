@@ -1,0 +1,333 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="used-car-market-insights-section" class="content-area">
+    <div class="title-section">
+        <h1>Used Car Market Insights</h1>
+        <p>Explore comprehensive analytics and trends in the used car market</p>
+    </div>
+
+    <div id="errorMessage" style="display: none; color: red;"></div>
+
+    <div class="analysis-section">
+        <h2>Cars for Sale Market Insights</h2>
+        <div class="analysis-container">
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="topMakesChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="topMakesAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="makeModelChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="makeModelAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="avgPriceByMakeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="avgPriceByMakeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="avgKilometersByMakeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="avgKilometersByMakeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="topMakeModelByPriceChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="topMakeModelByPriceAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="topMakeModelByKilometersChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="topMakeModelByKilometersAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="priceDistributionChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="priceDistributionAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="priceRangeDistributionChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="priceRangeDistributionAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="yearDistributionChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="yearDistributionAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="ageDistributionChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="ageDistributionAnalysis"></div>
+            </div>
+            <div class="chart-group full-width">
+                <div class="chart-container">
+                    <canvas id="regionalSpecsChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="regionalSpecsAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="pie-chart-container">
+                    <canvas id="sellerTypeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="sellerTypeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="pie-chart-container">
+                    <canvas id="bodyTypeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="bodyTypeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="pie-chart-container">
+                    <canvas id="fuelTypeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="fuelTypeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="pie-chart-container">
+                    <canvas id="transmissionTypeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="transmissionTypeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="priceByAgeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="priceByAgeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="kilometersByAgeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="kilometersByAgeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="kmPerYearChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="kmPerYearAnalysis"></div>
+            </div>
+        </div>
+        <div class="analysis-summary">
+            <h3>Used Car Market Insights Summary</h3>
+            <div id="overallSummary"></div>
+        </div>
+    </div>
+
+    <div class="analysis-separator"></div>
+
+    <div class="analysis-section">
+        <h2>Cars Sold Out Market Insights</h2>
+        <div class="analysis-container">
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutTopMakesChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutTopMakesAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutMakeModelChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutMakeModelAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutAvgPriceByMakeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutAvgPriceByMakeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutAvgKilometersByMakeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutAvgKilometersByMakeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutTopMakeModelByPriceChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutTopMakeModelByPriceAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutTopMakeModelByKilometersChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutTopMakeModelByKilometersAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutPriceDistributionChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutPriceDistributionAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutPriceRangeDistributionChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutPriceRangeDistributionAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutYearDistributionChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutYearDistributionAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutAgeDistributionChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutAgeDistributionAnalysis"></div>
+            </div>
+            <div class="chart-group full-width">
+                <div class="chart-container">
+                    <canvas id="soldOutRegionalSpecsChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutRegionalSpecsAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="pie-chart-container">
+                    <canvas id="soldOutSellerTypeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutSellerTypeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="pie-chart-container">
+                    <canvas id="soldOutBodyTypeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutBodyTypeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="pie-chart-container">
+                    <canvas id="soldOutFuelTypeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutFuelTypeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="pie-chart-container">
+                    <canvas id="soldOutTransmissionTypeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutTransmissionTypeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutPriceByAgeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutPriceByAgeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutKilometersByAgeChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutKilometersByAgeAnalysis"></div>
+            </div>
+            <div class="chart-group">
+                <div class="chart-container">
+                    <canvas id="soldOutKmPerYearChart"></canvas>
+                </div>
+                <div class="chart-analysis" id="soldOutKmPerYearAnalysis"></div>
+            </div>
+        </div>
+        <div class="analysis-summary">
+            <h3>Cars Sold Out Market Insights Summary</h3>
+            <div id="soldOutOverallSummary"></div>
+        </div>
+    </div>
+
+    <div class="analysis-separator"></div>
+
+    <div class="analysis-section">
+    <h2>Auction Cars Market Insights</h2>
+
+    <div class="analysis-container">
+        <div class="chart-group">
+            <div class="chart-container">
+                <canvas id="auctionMakeDistributionChart"></canvas>
+            </div>
+            <div id="auctionMakeDistributionAnalysis" class="chart-analysis"></div>
+        </div>
+
+        <div class="chart-group">
+            <div class="chart-container">
+                <canvas id="auctionMakeModelDistributionChart"></canvas>
+            </div>
+            <div id="auctionMakeModelDistributionAnalysis" class="chart-analysis"></div>
+        </div>
+
+        <div class="chart-group">
+            <div class="chart-container">
+                <canvas id="auctionYearDistributionChart"></canvas>
+            </div>
+            <div id="auctionYearDistributionAnalysis" class="chart-analysis"></div>
+        </div>
+
+        <div class="chart-group">
+            <div class="chart-container">
+                <canvas id="auctionOdometerDistributionChart"></canvas>
+            </div>
+            <div id="auctionOdometerDistributionAnalysis" class="chart-analysis"></div>
+        </div>
+
+        <div class="chart-group">
+            <div class="chart-container">
+                <canvas id="auctionDateDistributionChart"></canvas>
+            </div>
+            <div id="auctionDateDistributionAnalysis" class="chart-analysis"></div>
+        </div>
+
+        <div class="chart-group">
+            <div class="chart-container">
+                <canvas id="auctionSpecificationDistributionChart"></canvas>
+            </div>
+            <div id="auctionSpecificationDistributionAnalysis" class="chart-analysis"></div>
+        </div>
+
+        <div class="chart-group">
+            <div class="chart-container">
+                <canvas id="auctionPrimaryDamageDistributionChart"></canvas>
+            </div>
+            <div id="auctionPrimaryDamageDistributionAnalysis" class="chart-analysis"></div>
+        </div>
+
+        <div class="chart-group">
+            <div class="chart-container">
+                <canvas id="auctionParticipationDistributionChart"></canvas>
+            </div>
+            <div id="auctionParticipationDistributionAnalysis" class="chart-analysis"></div>
+        </div>
+
+        <div class="chart-group">
+            <div class="chart-container">
+                <canvas id="auctionBidDifferenceDistributionChart"></canvas>
+            </div>
+            <div id="auctionBidDifferenceDistributionAnalysis" class="chart-analysis"></div>
+        </div>
+    </div>
+
+    <div class="analysis-summary">
+        <h3>Auction Cars Market Insights Summary</h3>
+        <div id="auctionOverallSummary"></div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+<script src="{{ url_for('static', filename='js/used_car_market_insights.js') }}"></script>
+{% endblock %}

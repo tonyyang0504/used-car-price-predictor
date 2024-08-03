@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="title-section">
+    <h1>Cars for Sale</h1>
+    <p>Browse our extensive collection of cars for sale</p>
+</div>
+
+<div class="content-area">
+    <div id="cars-for-sale-section">
+        <form id="cars-for-sale-filter-form" class="filter-panel">
+            <div class="filter-row">
+                <div class="form-group">
+                    <label for="make-filter">Make:</label>
+                    <select id="make-filter"></select>
+                </div>
+                <div class="form-group">
+                    <label for="model-filter">Model:</label>
+                    <select id="model-filter"></select>
+                </div>
+                <div class="form-group">
+                    <label for="year-min">Year Range:</label>
+                    <div class="range-inputs">
+                        <select id="year-min"></select>
+                        <select id="year-max"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="km-min">Kilometers Range:</label>
+                    <div class="range-inputs">
+                        <input type="number" id="km-min" placeholder="Min">
+                        <input type="number" id="km-max" placeholder="Max">
+                    </div>
+                </div>
+            </div>
+            <div class="filter-row">
+                <div class="form-group">
+                    <label for="regional-specs-filter">Regional Specs:</label>
+                    <select id="regional-specs-filter"></select>
+                </div>
+                <div class="form-group">
+                    <label for="price-min">Price Range (AED):</label>
+                    <div class="range-inputs">
+                        <input type="number" id="price-min" placeholder="Min">
+                        <input type="number" id="price-max" placeholder="Max">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="seller-type-filter">Seller Type:</label>
+                    <select id="seller-type-filter"></select>
+                </div>
+                <div class="form-group">
+                    <label for="source-filter">Source:</label>
+                    <select id="source-filter"></select>
+                </div>
+            </div>
+            <div class="filter-row">
+                <div class="form-group button-group">
+                    <button type="submit" id="apply-filter-btn" class="button primary">Apply Filter</button>
+                    <button type="button" id="clear-filter-btn" class="button secondary">Clear</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="loading" style="display: none;">Processing...</div>
+        <div id="errorMessage"></div>
+
+        <div class="results-container">
+            <div id="sale-total-records" class="total-records"></div>
+            <table id="cars-for-sale-table">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+            <div id="carsPagination" class="pagination"></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/cars_for_sale.js') }}"></script>
+{% endblock %}

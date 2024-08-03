@@ -1,0 +1,746 @@
+:root {
+    --primary-color: #2e0068;  /* Deep purple for main text */
+    --secondary-color: #17b1eb;  /* Light blue for accents */
+    --heading-color: #17b1eb;  /* Bright blue for headings, matching "Websites with AI" */
+    --background-start: #f3eeff;  /* Very light purple for gradient start */
+    --background-end: #e6f7ff;  /* Very light blue for gradient end */
+    --text-color: #1a1a2e;  /* Dark navy for regular text */
+    --button-primary: #007bff;  /* Bright blue for primary buttons */
+    --button-secondary: #6c757d;  /* Light gray for secondary buttons */
+    --button-text: #ffffff;  /* White text for buttons */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+nav ul li a.active {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+main {
+    flex: 1 0 auto;
+    padding: 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--heading-color);
+    margin-bottom: 1.5rem;
+}
+
+.title-section {
+    text-align: center;
+    padding: 20px 20px 30px;
+    margin-bottom: 20px;
+    background: transparent;
+}
+
+.title-section h1 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.title-section p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.content-area {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: transparent;
+}
+
+#used-car-market-insights-section {
+    margin-top: 20px;
+}
+
+#used-car-market-insights-section,
+#value-your-car-section {
+    margin-top: 0;
+}
+
+.analysis-section {
+    margin-bottom: 60px;
+}
+
+.analysis-separator {
+    border-top: 1px solid rgba(224, 224, 224, 0.5);
+    margin: 40px 0;
+}
+
+.analysis-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.filter-panel, .input-panel {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.content-area h1 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+}
+
+.content-area .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+h3, h4, h5, h6 {
+    color: var(--primary-color);
+}
+
+.content-area p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    margin-right: 20px;
+    width: calc(25% - 15px);
+}
+
+.form-group.kilometers {
+    margin-right: 20px;
+}
+
+.form-group.trim {
+    flex: 1 1 calc(40% - 20px);
+}
+
+.form-group select,
+.form-group input[type="number"],
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.button-row button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.form-group input[type="number"] {
+    width: calc(100% - 22px);
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.button.primary, #apply-filter-btn {
+    background-color: var(--button-primary);
+    color: var(--button-text);
+}
+
+.button.secondary, #clear-filter-btn {
+    background-color: var(--button-secondary);
+    color: var(--button-text);
+}
+
+.button:hover, #apply-filter-btn:hover, #clear-filter-btn:hover {
+    opacity: 0.8;
+}
+
+.button, .button-row button, .button-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, opacity 0.3s;
+    color: var(--button-text);
+}
+
+.button.primary, #apply-filter-btn, #estimate-value-btn {
+    background-color: var(--button-primary);
+    color: var(--button-text);
+}
+
+.button.secondary, #clear-filter-btn, #clear-form-btn {
+    background-color: var(--button-secondary);
+    color: var(--button-text);
+}
+
+.button:hover, #apply-filter-btn:hover, #clear-filter-btn:hover,
+#estimate-value-btn:hover, #clear-form-btn:hover {
+    opacity: 0.8;
+}
+
+.button.secondary, #clear-form-btn, #clear-filter-btn {
+    background-color: var(--button-secondary);
+}
+
+.results-container {
+    margin-top: 40px;
+}
+
+.cta-buttons a,
+.button.primary,
+.button.secondary {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.cta-buttons a:hover,
+.button.primary:hover,
+.button.secondary:hover {
+    opacity: 0.8;
+}
+
+.cta-buttons .button.secondary,
+#browse-cars-btn {
+    background-color: var(--button-secondary);
+    color: var(--button-text);
+}
+
+.car-section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: rgba(248, 249, 250, 0.7);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+th:hover {
+    background-color: rgba(230, 230, 230, 0.7);
+}
+
+th::after {
+    content: '\2195';
+    margin-left: 5px;
+    opacity: 0.5;
+}
+
+th.asc::after {
+    content: '\2191';
+    opacity: 1;
+}
+
+th.desc::after {
+    content: '\2193';
+    opacity: 1;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    width: 32px;
+    height: 32px;
+    margin: 0 4px;
+    border: none;
+    background-color: #4b5563;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.pagination .current-page {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.pagination button.pagination-number {
+    font-weight: bold;
+}
+
+.pagination button:hover {
+    background-color: #555;
+}
+
+.pagination button.active {
+    background-color: #3b82f6;
+}
+
+.pagination button.pagination-nav {
+    background-color: #4b5563;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.chart-container {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 30px;
+}
+
+.chart-group {
+    width: 48%;
+    margin-bottom: 40px;
+}
+
+.chart-container, .pie-chart-container {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 15px;
+}
+
+.chart-analysis {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.analysis-summary {
+    background-color: rgba(248, 249, 250, 0.7);
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+#loading {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+#errorMessage {
+    color: #ff0000;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+.filter-panel {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.filter-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+.form-group.auction-date-range {
+    flex: 0 0 auto;
+    width: 300px;
+}
+
+.form-group.auction-date-range .range-inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group.auction-date-range .range-inputs input {
+    width: 48%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.range-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.range-inputs input {
+    flex: 1;
+}
+
+.total-records {
+    font-weight: bold;
+}
+
+.car-table-container {
+    margin-top: -5px;
+}
+
+#prediction, #carInfo, #similarCars, #soldOutCars {
+    margin-bottom: 40px;  /* Increase space between main sections */
+}
+
+.filter-row.align-items-end {
+    align-items: flex-end;
+}
+
+.filter-row.align-items-end .form-group {
+    flex: 2;
+}
+
+.filter-row.align-items-end .button-group {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 0;
+}
+
+.filter-row.align-items-end .button-group button {
+    margin: 0 5px;
+}
+
+@media (max-width: 1200px) {
+    .filter-row {
+        flex-wrap: wrap;
+    }
+
+    .form-group {
+        width: calc(50% - 10px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form-group:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    .button-group {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .button-row {
+        flex-direction: column;
+    }
+
+    .button-row button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .button-group {
+        justify-content: stretch;
+        flex-direction: column;
+    }
+
+    .button-group button {
+        flex: 1;
+        margin: 5px;
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .filter-row.align-items-end {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-row.align-items-end .form-group,
+    .filter-row.align-items-end .button-group {
+        width: 100%;
+    }
+
+    .filter-row.align-items-end .button-group {
+        margin-top: 15px;
+        justify-content: space-between;
+    }
+
+   .chart-group {
+        width: 100%;
+    }
+
+   nav ul {
+       flex-direction: column;
+       align-items: center;
+   }
+
+   nav ul li {
+       margin: 5px 0;
+   }
+
+   body {
+       padding-top: 120px;
+   }
+}
+
+.home-container h1 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+.home-container .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.home-container p {
+    margin-bottom: 2rem;
+}
+
+.home-container ul {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.home-container li {
+    margin-bottom: 0.5rem;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+.cta-buttons a {
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    nav {
+        padding: 0;
+    }
+
+    .nav-toggle {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        padding: 10px 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .content-area {
+        padding: 0 10px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .filter-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button-group button {
+        margin: 5px 0;
+    }
+
+    #value-your-car-section .button-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #value-your-car-section .button-group button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #value-your-car-section .form-group input[type="number"],
+    #value-your-car-section .form-group input[type="text"],
+    #value-your-car-section .form-group select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.form-group input[type="number"],
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    box-sizing: border-box;
+}
+
